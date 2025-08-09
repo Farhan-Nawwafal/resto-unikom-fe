@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* RejaFood Design System - All colors MUST be HSL */
+
+@layer base {
+  :root {
+    /* RejaFood Color Palette */
+    --background: 0 0% 18%; /* #2E2E2E */
+    --foreground: 60 20% 95%; /* #F5F5DC */
+
+    --card: 0 0% 20%;
+    --card-foreground: 60 20% 95%;
+
+    --popover: 0 0% 20%;
+    --popover-foreground: 60 20% 95%;
+
+    --primary: 14 98% 47%; /* #F14902 */
+    --primary-foreground: 60 20% 95%;
+
+    --secondary: 25 26% 22%; /* #5D4037 */
+    --secondary-foreground: 60 20% 95%;
+
+    --muted: 80 20% 65%; /* #A3B18A */
+    --muted-foreground: 60 20% 95%;
+
+    --accent: 45 73% 57%; /* #CBA135 */
+    --accent-foreground: 0 0% 18%;
+
+    --gold: 42 82% 56%; /* #EAAB37 */
+    --gold-foreground: 0 0% 18%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 20% 95%;
+
+    --border: 0 0% 30%;
+    --input: 0 0% 25%;
+    --ring: 14 98% 47%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar colors */
+    --sidebar-background: 0 0% 15%;
+    --sidebar-foreground: 60 20% 95%;
+    --sidebar-primary: 14 98% 47%;
+    --sidebar-primary-foreground: 60 20% 95%;
+    --sidebar-accent: 0 0% 20%;
+    --sidebar-accent-foreground: 60 20% 95%;
+    --sidebar-border: 0 0% 25%;
+    --sidebar-ring: 14 98% 47%;
+
+    /* Custom animations */
+    --transition-all: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.3s ease-out;
+  }
+
+  .animate-slide-out-right {
+    animation: slideOutRight 0.3s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
